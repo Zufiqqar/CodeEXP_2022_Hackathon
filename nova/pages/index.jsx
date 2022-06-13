@@ -6,7 +6,7 @@ import Create from "./Create";
 import Mainmenu from "./Mainmenu";
 
 const Home = () => {
-  return <Login />;
+  return <Mainmenu />;
 };
 
 export default Home;
