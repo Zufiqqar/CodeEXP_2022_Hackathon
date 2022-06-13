@@ -10,8 +10,8 @@ function Create() {
       <span class="justify-center text-sm text-center text-gray-500 flex-items-center dark:text-gray-400">
         Already have an account ?
         <a
-          href="#"
-          target="_blank"
+          href="Login"
+          target="_self"
           class="text-sm text-blue-500 underline hover:text-blue-700"
         >
           Sign in
