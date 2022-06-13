@@ -23,7 +23,11 @@ function Mainmenu() {
           </div>
         </div>
       </div>
+<<<<<<< Updated upstream
       <div>
+=======
+      <div class="absolute bottom-0 mb-5">
+>>>>>>> Stashed changes
         <span class=" text-left block mt-40 ml-40 font-mono font-bold">
           Code of Conduct:
         </span>
