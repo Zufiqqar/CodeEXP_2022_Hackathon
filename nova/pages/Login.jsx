@@ -85,7 +85,7 @@ function Login() {
       <div class="flex items-center justify-center mt-6">
         <a
           href="Create"
-          target="_blank"
+          target="_self"
           class="inline-flex items-center text-xs font-thin text-center text-gray-500 hover:text-gray-700 dark:text-gray-100 dark:hover:text-white"
         >
           <span class="ml-2">You don&#x27;t have an account?</span>
