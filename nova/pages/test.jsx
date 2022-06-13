@@ -37,12 +37,6 @@ function test() {
   ));
 
   return (
-<<<<<<< Updated upstream
-    <div>
-      <nav class="bg-white dark:bg-gray-800 w-full py-8">
-        <div class=" max-w-screen-md mx-auto font-light flex flex-wrap justify-between">
-          {difficultList}
-=======
     <div class="bg-orange-300 w-full h-full">
       <div
         style={{
@@ -85,7 +79,6 @@ function test() {
           }}
         >
           <p>Difficulty Level</p>
->>>>>>> Stashed changes
         </div>
 
         <div
@@ -142,14 +135,6 @@ function test() {
 
 function DifficultOption(props) {
   return (
-<<<<<<< Updated upstream
-    <a
-      class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-2xl font-medium"
-      href={props.link}
-    >
-      {props.text}
-    </a>
-=======
     <div>
       <a
         class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-xl font-medium"
@@ -158,7 +143,6 @@ function DifficultOption(props) {
         {props.text}
       </a>
     </div>
->>>>>>> Stashed changes
   );
 }
 
