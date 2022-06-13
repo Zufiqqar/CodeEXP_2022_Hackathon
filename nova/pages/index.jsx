@@ -6,7 +6,7 @@ import Create from "./Create";
 
 const Home = () => {
   return (
-      <Create/>
+      <Login/>
   );
 };
 
