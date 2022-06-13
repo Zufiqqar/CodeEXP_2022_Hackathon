@@ -9,7 +9,7 @@ import SelectMode from "./SelectMode";
 const Home = () => {
   return (
     <div>
-      <SelectMode />;
+      <Login />;
     </div>
   );
 };

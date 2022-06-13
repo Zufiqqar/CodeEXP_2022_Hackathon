@@ -23,7 +23,7 @@ function Mainmenu() {
           <div class="lg:mt-0 lg:flex-shrink-0">
             <div class="mt-5 inline-flex rounded-md shadow">
               <a
-                href="/SelectMode"
+                href="/test"
                 class="font-mono py-4 px-6 bg-blue-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
               >
                 View Session
