@@ -28,9 +28,9 @@ function test() {
 
   return (
     <div>
-      <nav class="bg-white dark:bg-gray-800  ">
-        <div class="flex flex-col justify-start max-w-7xl mx-auto   ">
-          <div class=" flex items-baseline space-x-4 ">{difficultList}</div>
+      <nav class="bg-white dark:bg-gray-800 w-full py-8">
+        <div class=" max-w-screen-md mx-auto font-light flex flex-wrap justify-between">
+          {difficultList}
         </div>
       </nav>
     </div>
@@ -53,7 +53,7 @@ function test() {
 function DifficultOption(props) {
   return (
     <a
-      class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+      class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-2xl font-medium"
       href={props.link}
     >
       {props.text}
