@@ -23,22 +23,21 @@ function test() {
 
 
 
-    return <div>
-    <nav class="bg-white dark:bg-gray-800  ">
-        <div class="max-w-7xl mx-auto px-8">
-            <div class="flex items-center justify-center h-16">
-                <div class="ml-10 flex items-baseline space-x-4 ">
-                    {
+    return <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col justify-center h-16">
+                <div class="flex items-baseline space-x-1 justify-center">
+                   {
                         difficultList
                     }
                     
 
                 </div>
+                <InstructionCard> </InstructionCard>
 
             </div>
         </div>
-    </nav>
-</div>
+
+
 
 
 }
@@ -58,9 +57,39 @@ function test() {
 </a> */
 
 function DifficultOption(props) {
-    return <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href={props.link}>
+    return <a class="text-gray-300  hover:text-gray-800  px-5 py-2 rounded-md text-sm font-medium" href={props.link}>
     {props.text}
     </a>
+}
+
+function InstructionCard(props) {
+    return <div class="bg-white w-full mx-auto p-2 sm:p-4 sm:h-64 rounded-2xl shadow-lg flex flex-col sm:flex-row gap-5 select-none ">
+        <div class="flex flex-col gap-1">
+            <div class="flex flex-1 flex-col gap-3">
+                <div class="bg-gray-200 w-full animate-pulse h-14 rounded-2xl">
+                </div>
+                <div class="bg-gray-200 w-full animate-pulse h-3 rounded-2xl">
+                    <p>{props.Instructions}</p>
+                </div>
+                <div class="bg-gray-200 w-full animate-pulse h-3 rounded-2xl">
+                </div>
+                <div class="bg-gray-200 w-full animate-pulse h-3 rounded-2xl">
+                </div>
+                <div class="bg-gray-200 w-full animate-pulse h-3 rounded-2xl">
+                </div>
+            </div>
+            <div class="mt-auto flex gap-3">
+                <div class="bg-gray-200 w-20 h-8 animate-pulse rounded-full">
+                </div>
+                <div class="bg-gray-200 w-20 h-8 animate-pulse rounded-full">
+                </div>
+                <div class="bg-gray-200 w-20 h-8 animate-pulse rounded-full ml-auto">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 }
 
 export default test;
