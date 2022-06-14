@@ -5,16 +5,22 @@ import React, { useState } from "react";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function test() {
-  const [state, setState] = useState("");
+  const [state, setState] = useState("/EasyExercises");
   const [exercises, setExercises] = useState([]);
 
   function SelectMode(item) {
-    const listOfExercises = item.exercises;
-    setExercises(listOfExercises);
-    if (item.id == 4) setState("Login"); //Please change this to easy page
-    else if (item.id == 5)
-      setState("Create"); //Please change this to medium page
-    else if (item.id == 6) setState("Mainmenu"); //Please change this to hard page
+    setExercises(item.exercises);
+    switch(item.Difficulty_Name){
+      case "Easy":
+        setState("/EasyExercises");
+        break; 
+      case "Medium":
+        setState("/MediumExercises");
+        break;
+      case "Hard":
+        setState("/HardExercises");
+        break;
+    }
   }
 
   const { data, error } = useSWR(
@@ -25,13 +31,7 @@ function test() {
   if (error) return <div>failed to load</div>;
   if (!data) return <div>loading...</div>;
 
-  // const options = [
-  //     { "key":"1", "text": "Home", "link": "/#"},
-  //     { "key":"2", "text": "Gallery", "link": "/#"},
-  //     { "key":"3", "text": "Content", "link": "/#"},
-  //     { "key":"4", "text": "Contact", "link": "/#"},
-  //     { "key":"5", "text": "Contactw", "link": "/#"},
-  // ];
+
   const difficultList = data.map((props) => (
     <DifficultOption
       key={props.id}
@@ -108,18 +108,7 @@ function test() {
   );
 }
 
-/* <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
-    Home
-</a>
-<a class="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
-    Gallery
-</a>
-<a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
-    Content
-</a>
-<a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
-    Contact
-</a> */
+
 
 function DifficultOption(props) {
   return (
@@ -135,3 +124,17 @@ function DifficultOption(props) {
 }
 
 export default test;
+
+
+/* <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
+    Home
+</a>
+<a class="text-gray-800 dark:text-white  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
+    Gallery
+</a>
+<a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
+    Content
+</a>
+<a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
+    Contact
+</a> */
