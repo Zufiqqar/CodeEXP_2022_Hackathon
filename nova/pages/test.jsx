@@ -37,33 +37,34 @@ function test() {
   ));
 
   return (
-    <div class="bg-orange-300 w-full h-full">
-      <div
-        style={{
-          padding: 10,
-          textAlign: "center",
-          fontSize: 30,
-        }}
-      >
-        {data.map((item) => {
-          return (
-            <button
-              style={{
-                marginLeft: 80,
-                borderBottomColor: "black",
-                borderBottomWidth: 1,
-              }}
-              onClick={() => SelectMode(item)}
-            >
-              {item.Difficulty_Name}
-            </button>
-          );
-        })}
+    <div class="w-full h-full">
+      <div class="flex justify-center px-8 py-4 text-2xl ">
+        <p class="w-2/5  ">Session 6 Exercises</p>
+      </div>
+
+      <div class="px-10 pt-5 text-center">
+        <button
+          class="px-8 py-4 text-2xl text-base rounded-full text-green-600  bg-green-200"
+          onClick={() => SelectMode(data[0])}
+        >
+          {data[0].Difficulty_Name}
+        </button>
+        <button
+          class="ml-20  px-8 py-4 text-2xl text-base rounded-full text-yellow-600  bg-yellow-200"
+          onClick={() => SelectMode(data[1])}
+        >
+          {data[1].Difficulty_Name}
+        </button>
+        <button
+          class="ml-20  px-8 py-4 text-2xl text-base rounded-full text-red-600  bg-red-200"
+          onClick={() => SelectMode(data[2])}
+        >
+          {data[2].Difficulty_Name}
+        </button>
       </div>
 
       <div
         style={{
-          backgroundColor: "#f3e5ab",
           height: "100vh",
           marginTop: 20,
           borderColor: "black",
@@ -81,39 +82,19 @@ function test() {
           <p>Difficulty Level</p>
         </div>
 
-        <div
-          style={{
-            textAlign: "left",
-            marginLeft: "30%",
-            alignContent: "flex-end",
-            fontSize: 22,
-            marginTop: 30,
-          }}
-        >
-          {exercises.map((exercise) => (
-            <div>
-              <p>{exercise}</p>
-            </div>
-          ))}
-        </div>
-        <div
-          style={{
-            textAlign: "center",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <button
-            style={{
-              fontSize: 22,
-              borderColor: "black",
-              borderWidth: 1,
-              padding: 10,
-              backgroundColor: "#c0ffee",
-            }}
-          >
-            Start Session
-          </button>
+        <div class="mt-1 container flex-col  border-4 border-black rounded-lg mx-auto w-2/5 relative flex items-center py-10  my-32">
+          <div class="w-2/5 flex flex-col  relative z-10">
+            {exercises.map((exercise) => (
+              <div>
+                <p>{exercise}</p>
+              </div>
+            ))}
+          </div>
+          <div class=" flex items-center relative z-10">
+            <button class="mt-10 block bg-gray-800 hover:bg-gray-900 py-3 px-4 text-lg text-white font-bold uppercase ">
+              Start Session
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -144,36 +125,6 @@ function DifficultOption(props) {
       </a>
     </div>
   );
-}
-
-function InstructionCard(props) {
-    return <div class="bg-white w-full mx-auto p-2 sm:p-4 sm:h-64 rounded-2xl shadow-lg flex flex-col sm:flex-row gap-5 select-none ">
-        <div class="flex flex-col gap-1">
-            <div class="flex flex-1 flex-col gap-3">
-                <div class="bg-gray-200 w-full animate-pulse h-14 rounded-2xl">
-                </div>
-                <div class="bg-gray-200 w-full animate-pulse h-3 rounded-2xl">
-                    <p>{props.Instructions}</p>
-                </div>
-                <div class="bg-gray-200 w-full animate-pulse h-3 rounded-2xl">
-                </div>
-                <div class="bg-gray-200 w-full animate-pulse h-3 rounded-2xl">
-                </div>
-                <div class="bg-gray-200 w-full animate-pulse h-3 rounded-2xl">
-                </div>
-            </div>
-            <div class="mt-auto flex gap-3">
-                <div class="bg-gray-200 w-20 h-8 animate-pulse rounded-full">
-                </div>
-                <div class="bg-gray-200 w-20 h-8 animate-pulse rounded-full">
-                </div>
-                <div class="bg-gray-200 w-20 h-8 animate-pulse rounded-full ml-auto">
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 }
 
 export default test;

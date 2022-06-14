@@ -4,42 +4,37 @@ function Mainmenu() {
   const nameofUser = "Benny";
 
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        height: "100vh",
-      }}
-    >
-      <div class="bg-orange-300 w-full h-full">
-        <div class="text-center w-full">
-          <h2 class="text-3xl font-extrabold text-black dark:text-white">
-            <span class="block my-10 font-mono">Welcome back {nameofUser}</span>
-            <span class="block font-mono text-green-500">
-              You have 6 sessions remaining.
-            </span>
-          </h2>
-          <div class="lg:mt-0 lg:flex-shrink-0">
-            <div class="mt-5 inline-flex rounded-md shadow">
-              <a
-                href="/test"
-                class="font-mono py-4 px-6 bg-blue-600 hover:bg-indigo-700 focus:ring-indigo-500 focus:ring-offset-indigo-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2  rounded-lg "
-              >
-                View Session
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="absolute bottom-0 mb-5">
-          <span class=" text-left block mt-40 ml-40 font-mono font-bold">
-            Code of Conduct:
-          </span>
-          <span class="text-left  ml-40 font-mono flex flex-wrap w-1/2">
-            Cameras have to be turned on and participants need to be fully
-            visible at all times. Participants must also be in proper workout
-            attire, including sports shoes
-          </span>
+    <div class="bg-indigo-900 relative overflow-hidden h-screen ">
+      <img
+        src="https://novabackend.skylivingston.website/uploads/cheerful_stretching_male_fitness_instructor_260nw_1789789676_52400219ef.png"
+        class="absolute h-full w-full object-cover"
+      />
+      <div class="inset-0 bg-black opacity-50 absolute"> </div>
+
+      <div class="rounded-lg mx-auto w-full relative flex items-center py-20  pb-10  justify-center">
+        <p class="flex flex-col items-center font-extrabold  text-center md:text-4xl text-white">
+          Welcome here Benny!
+        </p>
+      </div>
+
+      <div class="mt-1 container border-4 border-white rounded-lg mx-auto w-4/5 relative flex items-center py-10  my-32">
+        <div class="w-full flex flex-col items-center justify-between relative z-10 ">
+          <p class="items-center font-extrabold  text-center md:text-4xl text-white my-12">
+            You have 6 sessions remaining.
+          </p>
+          <p class="w-3/5 text-center items-center text-xl text-white my-12">
+            Note: Cameras have to be turned on and participants need to be fully
+            visible at all times. There must be empty space of 2m radius around
+            the participant to ensure safety. Participants must also be in
+            proper workout attire with covered shoe.
+          </p>
+
+          <a
+            href="test"
+            class="block bg-gray-800 hover:bg-gray-900 py-3 px-4 text-lg text-white font-bold uppercase mt-1 my-30"
+          >
+            Start Session
+          </a>
         </div>
       </div>
     </div>
