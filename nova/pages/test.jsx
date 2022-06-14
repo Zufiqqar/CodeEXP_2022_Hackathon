@@ -5,12 +5,16 @@ import React, { useState } from "react";
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
 function test() {
-  const [state, setState] = useState(4);
+  const [state, setState] = useState("");
   const [exercises, setExercises] = useState([]);
 
   function SelectMode(item) {
     const listOfExercises = item.exercises;
     setExercises(listOfExercises);
+    if (item.id == 4) setState("Login"); //Please change this to easy page
+    else if (item.id == 5)
+      setState("Create"); //Please change this to medium page
+    else if (item.id == 6) setState("Mainmenu"); //Please change this to hard page
   }
 
   const { data, error } = useSWR(
@@ -91,9 +95,12 @@ function test() {
             ))}
           </div>
           <div class=" flex items-center relative z-10">
-            <button class="mt-10 block bg-gray-800 hover:bg-gray-900 py-3 px-4 text-lg text-white font-bold uppercase ">
+            <a
+              class="mt-10 block bg-gray-800 hover:bg-gray-900 py-3 px-4 text-lg text-white font-bold uppercase "
+              href={state}
+            >
               Start Session
-            </button>
+            </a>
           </div>
         </div>
       </div>
