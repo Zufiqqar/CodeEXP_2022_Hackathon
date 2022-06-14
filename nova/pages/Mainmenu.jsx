@@ -35,7 +35,7 @@ function Mainmenu() {
           <span class=" text-left block mt-40 ml-40 font-mono font-bold">
             Code of Conduct:
           </span>
-          <span class="text-left block ml-40 font-mono flex flex-wrap w-1/2">
+          <span class="text-left  ml-40 font-mono flex flex-wrap w-1/2">
             Cameras have to be turned on and participants need to be fully
             visible at all times. Participants must also be in proper workout
             attire, including sports shoes
