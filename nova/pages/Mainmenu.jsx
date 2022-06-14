@@ -22,10 +22,11 @@ function Mainmenu() {
           <p class="items-center font-extrabold  text-center md:text-4xl text-white my-12">
             You have 6 sessions remaining.
           </p>
-          <p class="max-w-lg text-center items-center font-extrabold text-lg text-white my-12">
+          <p class="w-3/5 text-center items-center text-xl text-white my-12">
             Note: Cameras have to be turned on and participants need to be fully
-            visible at all times. Participants must also be in proper workout
-            attire, including sports shoes
+            visible at all times. There must be empty space of 2m radius around
+            the participant to ensure safety. Participants must also be in
+            proper workout attire with covered shoe.
           </p>
 
           <a

@@ -38,38 +38,29 @@ function test() {
 
   return (
     <div class="w-full h-full">
-      <div
-        style={{
-          padding: 10,
-          textAlign: "center",
-          fontSize: 30,
-        }}
-      >
-        <div>
-          <button
-            class="px-4 py-2  text-base rounded-full text-green-600  bg-green-200"
-            onClick={() => SelectMode(data[0])}
-          >
-            {data[0].Difficulty_Name}
-          </button>
-          <button
-            class="ml-20  px-4 py-2  text-base rounded-full text-yellow-600  bg-yellow-200"
-            onClick={() => SelectMode(data[1])}
-          >
-            {data[1].Difficulty_Name}
-          </button>
-          <button
-            class="ml-20  px-4 py-2  text-base rounded-full text-red-600  bg-red-200"
-            onClick={() => SelectMode(data[2])}
-          >
-            {data[2].Difficulty_Name}
-          </button>
-        </div>
+      <div class="px-10 pt-5 text-center">
+        <button
+          class="px-8 py-4 text-2xl text-base rounded-full text-green-600  bg-green-200"
+          onClick={() => SelectMode(data[0])}
+        >
+          {data[0].Difficulty_Name}
+        </button>
+        <button
+          class="ml-20  px-8 py-4 text-2xl text-base rounded-full text-yellow-600  bg-yellow-200"
+          onClick={() => SelectMode(data[1])}
+        >
+          {data[1].Difficulty_Name}
+        </button>
+        <button
+          class="ml-20  px-8 py-4 text-2xl text-base rounded-full text-red-600  bg-red-200"
+          onClick={() => SelectMode(data[2])}
+        >
+          {data[2].Difficulty_Name}
+        </button>
       </div>
 
       <div
         style={{
-          // backgroundColor: "#f3e5ab",
           height: "100vh",
           marginTop: 20,
           borderColor: "black",
@@ -87,39 +78,19 @@ function test() {
           <p>Difficulty Level</p>
         </div>
 
-        <div
-          style={{
-            textAlign: "left",
-            marginLeft: "30%",
-            alignContent: "flex-end",
-            fontSize: 22,
-            marginTop: 30,
-          }}
-        >
-          {exercises.map((exercise) => (
-            <div>
-              <p>{exercise}</p>
-            </div>
-          ))}
-        </div>
-        <div
-          style={{
-            textAlign: "center",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <button
-            style={{
-              fontSize: 22,
-              borderColor: "black",
-              borderWidth: 1,
-              padding: 10,
-              backgroundColor: "#c0ffee",
-            }}
-          >
-            Start Session
-          </button>
+        <div class="mt-1 container flex-col  border-4 border-black rounded-lg mx-auto w-2/5 relative flex items-center py-10  my-32">
+          <div class="w-2/5 flex flex-col  relative z-10">
+            {exercises.map((exercise) => (
+              <div>
+                <p>{exercise}</p>
+              </div>
+            ))}
+          </div>
+          <div class=" flex items-center relative z-10">
+            <button class="mt-10 block bg-gray-800 hover:bg-gray-900 py-3 px-4 text-lg text-white font-bold uppercase ">
+              Start Session
+            </button>
+          </div>
         </div>
       </div>
     </div>
