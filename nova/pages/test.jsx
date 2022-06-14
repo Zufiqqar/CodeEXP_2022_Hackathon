@@ -38,6 +38,10 @@ function test() {
 
   return (
     <div class="w-full h-full">
+      <div class="flex justify-center px-8 py-4 text-2xl ">
+        <p class="w-2/5  ">Session 6 Exercises</p>
+      </div>
+
       <div class="px-10 pt-5 text-center">
         <button
           class="px-8 py-4 text-2xl text-base rounded-full text-green-600  bg-green-200"
