@@ -1,47 +1,124 @@
-import useSWR from 'swr'
+import { Button } from "semantic-ui-react";
+import useSWR from "swr";
+import React, { useState } from "react";
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-
 function test() {
+  const [state, setState] = useState(4);
+  const [exercises, setExercises] = useState([]);
 
-    const { data, error } = useSWR(`https://novabackend.skylivingston.website/difficulties`, fetcher);
+  function SelectMode(item) {
+    const listOfExercises = item.exercises;
+    setExercises(listOfExercises);
+  }
 
+  const { data, error } = useSWR(
+    `https://novabackend.skylivingston.website/difficulties`,
+    fetcher
+  );
 
+  if (error) return <div>failed to load</div>;
+  if (!data) return <div>loading...</div>;
 
-    if (error) return <div>failed to load</div>
-    if (!data) return <div>loading...</div>
+  // const options = [
+  //     { "key":"1", "text": "Home", "link": "/#"},
+  //     { "key":"2", "text": "Gallery", "link": "/#"},
+  //     { "key":"3", "text": "Content", "link": "/#"},
+  //     { "key":"4", "text": "Contact", "link": "/#"},
+  //     { "key":"5", "text": "Contactw", "link": "/#"},
+  // ];
+  const difficultList = data.map((props) => (
+    <DifficultOption
+      key={props.id}
+      text={props.Difficulty_Name}
+      link="\#"
+    ></DifficultOption>
+  ));
 
-    // const options = [
-    //     { "key":"1", "text": "Home", "link": "/#"},
-    //     { "key":"2", "text": "Gallery", "link": "/#"},
-    //     { "key":"3", "text": "Content", "link": "/#"},
-    //     { "key":"4", "text": "Contact", "link": "/#"},
-    //     { "key":"5", "text": "Contactw", "link": "/#"},
-    // ];
-    const difficultList = data.map((props) => <DifficultOption key={props.id} text= {props.Difficulty_Name} link="\#"></DifficultOption>)
+  return (
+    <div class="bg-orange-300 w-full h-full">
+      <div
+        style={{
+          padding: 10,
+          textAlign: "center",
+          fontSize: 30,
+        }}
+      >
+        {data.map((item) => {
+          return (
+            <button
+              style={{
+                marginLeft: 80,
+                borderBottomColor: "black",
+                borderBottomWidth: 1,
+              }}
+              onClick={() => SelectMode(item)}
+            >
+              {item.Difficulty_Name}
+            </button>
+          );
+        })}
+      </div>
 
-
-
-    return <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col justify-center h-16">
-                <div class="flex items-baseline space-x-1 justify-center">
-                   {
-                        difficultList
-                    }
-                    
-
-                </div>
-                <InstructionCard> </InstructionCard>
-
-            </div>
+      <div
+        style={{
+          backgroundColor: "#f3e5ab",
+          height: "100vh",
+          marginTop: 20,
+          borderColor: "black",
+          borderWidth: 1,
+        }}
+      >
+        <div
+          style={{
+            textAlign: "center",
+            marginTop: 20,
+            fontSize: 25,
+            fontStyle: "oblique",
+          }}
+        >
+          <p>Difficulty Level</p>
         </div>
 
-
-
-
+        <div
+          style={{
+            textAlign: "left",
+            marginLeft: "30%",
+            alignContent: "flex-end",
+            fontSize: 22,
+            marginTop: 30,
+          }}
+        >
+          {exercises.map((exercise) => (
+            <div>
+              <p>{exercise}</p>
+            </div>
+          ))}
+        </div>
+        <div
+          style={{
+            textAlign: "center",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <button
+            style={{
+              fontSize: 22,
+              borderColor: "black",
+              borderWidth: 1,
+              padding: 10,
+              backgroundColor: "#c0ffee",
+            }}
+          >
+            Start Session
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
-
 
 /* <a class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-sm font-medium" href="/#">
     Home
@@ -57,9 +134,16 @@ function test() {
 </a> */
 
 function DifficultOption(props) {
-    return <a class="text-gray-300  hover:text-gray-800  px-5 py-2 rounded-md text-sm font-medium" href={props.link}>
-    {props.text}
-    </a>
+  return (
+    <div>
+      <a
+        class="text-gray-300  hover:text-gray-800 dark:hover:text-white px-3 py-2 rounded-md text-xl font-medium"
+        // href={props.link}
+      >
+        {props.text}
+      </a>
+    </div>
+  );
 }
 
 function InstructionCard(props) {

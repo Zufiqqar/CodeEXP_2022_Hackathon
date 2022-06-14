@@ -4,6 +4,7 @@ import Image from "next/image";
 import Login from "./login";
 import Create from "./Create";
 import Mainmenu from "./Mainmenu";
+import SelectMode from "./SelectMode";
 
 const Home = () => {
   return (
