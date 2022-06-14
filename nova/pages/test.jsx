@@ -37,7 +37,7 @@ function test() {
   ));
 
   return (
-    <div class="bg-orange-300 w-full h-full">
+    <div class="w-full h-full">
       <div
         style={{
           padding: 10,
@@ -45,25 +45,31 @@ function test() {
           fontSize: 30,
         }}
       >
-        {data.map((item) => {
-          return (
-            <button
-              style={{
-                marginLeft: 80,
-                borderBottomColor: "black",
-                borderBottomWidth: 1,
-              }}
-              onClick={() => SelectMode(item)}
-            >
-              {item.Difficulty_Name}
-            </button>
-          );
-        })}
+        <div>
+          <button
+            class="px-4 py-2  text-base rounded-full text-green-600  bg-green-200"
+            onClick={() => SelectMode(data[0])}
+          >
+            {data[0].Difficulty_Name}
+          </button>
+          <button
+            class="ml-20  px-4 py-2  text-base rounded-full text-yellow-600  bg-yellow-200"
+            onClick={() => SelectMode(data[1])}
+          >
+            {data[1].Difficulty_Name}
+          </button>
+          <button
+            class="ml-20  px-4 py-2  text-base rounded-full text-red-600  bg-red-200"
+            onClick={() => SelectMode(data[2])}
+          >
+            {data[2].Difficulty_Name}
+          </button>
+        </div>
       </div>
 
       <div
         style={{
-          backgroundColor: "#f3e5ab",
+          // backgroundColor: "#f3e5ab",
           height: "100vh",
           marginTop: 20,
           borderColor: "black",
@@ -144,36 +150,6 @@ function DifficultOption(props) {
       </a>
     </div>
   );
-}
-
-function InstructionCard(props) {
-    return <div class="bg-white w-full mx-auto p-2 sm:p-4 sm:h-64 rounded-2xl shadow-lg flex flex-col sm:flex-row gap-5 select-none ">
-        <div class="flex flex-col gap-1">
-            <div class="flex flex-1 flex-col gap-3">
-                <div class="bg-gray-200 w-full animate-pulse h-14 rounded-2xl">
-                </div>
-                <div class="bg-gray-200 w-full animate-pulse h-3 rounded-2xl">
-                    <p>{props.Instructions}</p>
-                </div>
-                <div class="bg-gray-200 w-full animate-pulse h-3 rounded-2xl">
-                </div>
-                <div class="bg-gray-200 w-full animate-pulse h-3 rounded-2xl">
-                </div>
-                <div class="bg-gray-200 w-full animate-pulse h-3 rounded-2xl">
-                </div>
-            </div>
-            <div class="mt-auto flex gap-3">
-                <div class="bg-gray-200 w-20 h-8 animate-pulse rounded-full">
-                </div>
-                <div class="bg-gray-200 w-20 h-8 animate-pulse rounded-full">
-                </div>
-                <div class="bg-gray-200 w-20 h-8 animate-pulse rounded-full ml-auto">
-                </div>
-            </div>
-        </div>
-    </div>
-
-
 }
 
 export default test;
