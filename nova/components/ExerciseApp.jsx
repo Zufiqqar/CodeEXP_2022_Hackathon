@@ -31,6 +31,7 @@ function ExerciseApp(props) {
         id={count}
         next_fun={()=>{handleNext()}}
         time={Number(ActivityList[count].Time)}
+        image_url={ActivityList[count].Gif.url}
         ></TimedActivityCard>
       } else {
         return <div class="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 max-h-min">
@@ -66,9 +67,6 @@ function ExerciseApp(props) {
 
   }
   
-
-  
-  
   
   function TimedActivityCard(props){
   
@@ -81,7 +79,7 @@ function ExerciseApp(props) {
     function displayCards() {
       switch(state){
         case "Pre-Activity":
-          return <ActivityCard id={props.id} title={props.title} content_text={props.content_text} next_fun={()=>{setState("Doing-Activity")}}></ActivityCard>
+          return <ActivityCard  image_url={props.image_url} id={props.id} title={props.title} content_text={props.content_text} next_fun={()=>{setState("Doing-Activity")}}></ActivityCard>
           break;
         case "Doing-Activity":
           return <TimerCard time ={props.time} next_fun={handleNext}></TimerCard>
@@ -98,10 +96,10 @@ function ExerciseApp(props) {
   
   
   function ActivityCard(props){
-    return <div class="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 max-h-min">
+    return <div class="max-w-xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 max-h-min">
     {/* auto play video here */}
-    <img class="object-cover w-full h-64" 
-    src="https://images.unsplash.com/photo-1550439062-609e1531270e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" 
+    <img class="object-cover w-full h-full" 
+    src={process.env.API_LINK.concat(props.image_url)} 
     alt="Article"/>
   
     <div class="p-6">
@@ -184,7 +182,7 @@ function ExerciseApp(props) {
   
     }
   
-    return <div class="max-w-2xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 max-h-min p-5">
+    return <div class="max-w-xl mx-auto overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800 max-h-min p-5">
       <div class="flex flex-col items-center justify-end">
           <div class="text-6xl text-center flex w-full items-center justify-center">
               <div class="w-24 mx-1 p-2 bg-white text-blue-500 rounded-lg">
